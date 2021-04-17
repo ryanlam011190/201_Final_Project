@@ -1,0 +1,25 @@
+DROP DATABASE IF EXISTS LAB9;
+CREATE DATABASE Lab9;
+USE LAB9;
+CREATE TABLE Grades (
+	ID INT(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    SID INT(11) NOT NULL,
+    ClassName VARCHAR(50) NOT NULL,
+    Grade VARCHAR(20) NOT NULL
+);
+INSERT INTO Grades(SID, ClassName, Grade) VALUES (111, 'ART123', 'F');
+INSERT INTO Grades(SID, ClassName, Grade) VALUES (111, 'BUS456', 'A-');
+INSERT INTO Grades(SID, ClassName, Grade) VALUES (113, 'REL100', 'D-');
+INSERT INTO Grades(SID, ClassName, Grade) VALUES (113, 'ECO966', 'A-');
+INSERT INTO Grades(SID, ClassName, Grade) VALUES (113, 'BUS456', 'B+');
+INSERT INTO Grades(SID, ClassName, Grade) VALUES (112, 'BUS456', 'A');
+INSERT INTO Grades(SID, ClassName, Grade) VALUES (112, 'ECO966', 'B+');
+
+CREATE TABLE StudentInfo(
+	SID INT(11) PRIMARY KEY NOT NULL,
+    Name VARCHAR(50) NOT NULL
+);
+
+INSERT INTO StudentInfo(SID, name) VALUES(111, 'Jack Xu');
+INSERT INTO StudentInfo(SID, name) VALUES(112, 'Daniel Mizrahi');
+INSERT INTO StudentInfo(SID, name) VALUES(113, 'Emily Jin');
