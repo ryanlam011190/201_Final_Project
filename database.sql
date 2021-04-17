@@ -1,25 +1,12 @@
-DROP DATABASE IF EXISTS LAB9;
-CREATE DATABASE Lab9;
-USE LAB9;
-CREATE TABLE Grades (
-	ID INT(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    SID INT(11) NOT NULL,
-    ClassName VARCHAR(50) NOT NULL,
-    Grade VARCHAR(20) NOT NULL
+DROP database if exists FinalProject;
+CREATE DATABASE FinalProject;
+USE FinalProject;
+CREATE TABLE Users (
+	ID INT(11) primary key not null auto_increment,
+    username varchar(45) not null,
+    passw varchar(45) not null,
+    usc_email varchar(45) not null,
+    fname varchar(45) not null,
+    lname varchar(45) not null
 );
-INSERT INTO Grades(SID, ClassName, Grade) VALUES (111, 'ART123', 'F');
-INSERT INTO Grades(SID, ClassName, Grade) VALUES (111, 'BUS456', 'A-');
-INSERT INTO Grades(SID, ClassName, Grade) VALUES (113, 'REL100', 'D-');
-INSERT INTO Grades(SID, ClassName, Grade) VALUES (113, 'ECO966', 'A-');
-INSERT INTO Grades(SID, ClassName, Grade) VALUES (113, 'BUS456', 'B+');
-INSERT INTO Grades(SID, ClassName, Grade) VALUES (112, 'BUS456', 'A');
-INSERT INTO Grades(SID, ClassName, Grade) VALUES (112, 'ECO966', 'B+');
-
-CREATE TABLE StudentInfo(
-	SID INT(11) PRIMARY KEY NOT NULL,
-    Name VARCHAR(50) NOT NULL
-);
-
-INSERT INTO StudentInfo(SID, name) VALUES(111, 'Jack Xu');
-INSERT INTO StudentInfo(SID, name) VALUES(112, 'Daniel Mizrahi');
-INSERT INTO StudentInfo(SID, name) VALUES(113, 'Emily Jin');
+INSERT INTO Users(username, passw, usc_email, fname, lname) VALUES('rhlam', '123456', 'rhlam@usc.edu', 'ryan', 'lam');
