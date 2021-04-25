@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/registerServlet")
 public class RegisterServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-    private RegisterJDBC usersJDBC = new RegisterJDBC();
+    private RegisterJDBC usersDao = new RegisterJDBC();
     public RegisterServlet() {
         super();
         // TODO Auto-generated constructor stub
@@ -33,27 +33,22 @@ public class RegisterServlet extends HttpServlet {
 		String email = request.getParameter("email");
 		String username = request.getParameter("username");
 		String passw = request.getParameter("password");
-		String fname = request.getParameter("fname");
-		String lname = request.getParameter("lname");
 		
 		System.out.println(email);
 		
-		UsersConstructor usersConstructor = new UsersConstructor();
-		usersConstructor.setEmail(email);
-		usersConstructor.setUsername(username);
-		usersConstructor.setPassword(passw);
-		usersConstructor.setFname(fname);
-		usersConstructor.setLname(lname);
+		UsersConstructor usersLogin = new UsersConstructor();
+		usersLogin.setEmail(email);
+		usersLogin.setUsername(username);
+		usersLogin.setPassword(passw);
 		
 		try {
-			usersJDBC.registerUsers(usersConstructor);
+			usersDao.registerUsers(usersLogin);
 		} catch (ClassNotFoundException | SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		//if successfully created an account
 		RequestDispatcher dispatch = getServletContext().getRequestDispatcher("/registerConfirmation.html");
-		//RequestDispatcher dispatcher = request.getRequestDispatcher("/registerConfirmation.html");
 		dispatch.forward(request, response);
 	}
 

@@ -1,12 +1,14 @@
-DROP database if exists FinalProject;
-CREATE DATABASE FinalProject;
-USE FinalProject;
 CREATE TABLE Users (
-	ID INT(11) primary key not null auto_increment,
-    username varchar(45) not null,
-    passw varchar(45) not null,
-    usc_email varchar(45) not null,
-    fname varchar(45) not null,
-    lname varchar(45) not null
+	ID int(3) PRIMARY KEY NOT NULL auto_increment,
+    email varchar(20) DEFAULT NULL,
+    username varchar(20) DEFAULT NULL,
+    passw varchar(20) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+CREATE TABLE Favorites (
+	ID int(3) PRIMARY KEY NOT NULL auto_increment,
+    ticker VARCHAR(20) DEFAULT NULL,
+    price varchar(20) DEFAULT NULL,
+    company VARCHAR(20) DEFAULT NULL,
+    profit VARCHAR(20) DEFAULT NULL
 );
-INSERT INTO Users(username, passw, usc_email, fname, lname) VALUES('rhlam', '123456', 'rhlam@usc.edu', 'ryan', 'lam');
