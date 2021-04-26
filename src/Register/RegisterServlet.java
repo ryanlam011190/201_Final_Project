@@ -48,7 +48,7 @@ public class RegisterServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 		//if successfully created an account
-		RequestDispatcher dispatch = getServletContext().getRequestDispatcher("/registerConfirmation.html");
+		RequestDispatcher dispatch = getServletContext().getRequestDispatcher("/index.html");
 		dispatch.forward(request, response);
 	}
 

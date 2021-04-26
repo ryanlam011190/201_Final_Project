@@ -41,7 +41,7 @@ public class LoginServlet extends HttpServlet {
 			} else {
 				//else create a session for it
 				//HttpSession session = request.getSession();	
-				response.sendRedirect("loginConfirmation.html");
+				response.sendRedirect("/index.html");
 			}
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
