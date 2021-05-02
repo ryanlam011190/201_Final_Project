@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<title> Login/Sign up page</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+ <!-- Bootstrap CSS -->
+<style>
+.title{
+color:gray;
+font-size:20 pt;
+}
+.h1{
+font-size:25;
+}
+.head{
+font-size:15;
+color: Firebrick;
+text-align:center;
+}
+.header{
+font-size: 30pt;
+padding: 10px;
+text-align: center;
+background-color: Firebrick;
+color: white;
+font-weight: bold;
+text-decoration: none;
+overflow:hidden;
+width: 99%;
+height: 10%;
+margin-bottom:100;
+}
+.right{
+float: right;
+  }
+  header li {  
+margin: 20px;  
+}  
+header li2 {  
+margin: 480px;
+}  
+.header a{
+font: Calibri;
+text-align: center;
+padding: 5px;
+font-size: 10pt;
+text-decoration: none;
+font-weight: bold;
+font-weight: bold;
+color:white;
+margin-top: -100;
+position:relative;
+}
+.logo{
+float: left;
+}
+.logo2{
+float:right;
+}
+.header a.active{
+border-style: solid;
+border-color: white;
+border-width: thin;
+}
+.column {
+float: left;
+height: 100%;
+width: 50%;
+height: 300px;
+padding: 20 px;
+}
+.row:after{
+content: "";
+display: table;
+clear: both;
+}
+form{
+font: Calibri;
+width: 100%;
+font-size: 20 pt;
+color: gray;
+line-height: 2;
+}
+form button{
+width: 80%;
+background-color: Firebrick;
+cursor: pointer;
+text-align: center;
+padding: 10px;
+color:white;
+border-radius: 10px;
+}
+.block{
+width:80%;
+background-color:white;
+text-align: center;
+height: 25px;
+border: 1px solid lightgray;
+border-radius: 10px;
+}
+</style>
+</head>
+<body>
+<header class="header">
+<li2><a href="index.html" class="logo">CHAT USC</a></li2>
+<a class="logo2" href= "index.html"> Home</a>
+<a class="logo2" href="login.html">Login/Sign Up</a>
+</header>
+<br>
+<div class="row">
+<div class="column">
+<h1 class = "title">Login</h1>
+<form name = "login" method = "POST" action="LoginServlet">
+Username<br> <input type="text" class="block" name = "username" required /><br>
+Password<br><input type="password" class="block" name = "password"  required/><br>
+<br>
+<button type="submit" > Sign in</button>
+</form>
+</div>
+<div class="column">
+<h1 class = "title">Sign up</h1>
+<form  method = "POST" action="registerServlet">
+Email<br> <input type="email" class="block"  name = "email" required /><br>
+Username<br> <input type="text" class="block" name = "username" required /><br>
+  Password<br><input type="password" class="block" name = "password"      required/><br>
+Confirm Password<br><input type="password" class="block" name = "Sconfirmpassword" required/><br>
+<input type="checkbox" id="agreed" name="agreed" value="agreed" required>
+<label for="agreed"> I have read and agree to all the terms and conditions of Chat USC.</label>
+<br>
+<button type="submit" > Create Account</button>
+<br>
+</form>
+<br>
+<button style="width: 80%; background-color: Firebrick; cursor: pointer; text-align: center; padding: 10px;
+color:white; border-radius: 10px;" type = "submit" onClick="location.href='index.html'"> Continue as a guest </button>
+</div>
+</div>
+</body>
+</html>

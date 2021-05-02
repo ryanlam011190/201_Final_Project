@@ -1,234 +1,161 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
-<meta charset="ISO-8859-1">
-<script
-  src="https://code.jquery.com/jquery-3.4.1.min.js"
-  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-  crossorigin="anonymous"></script>
-<script type="text/javascript"
-    src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.0/dist/jquery.validate.min.js"></script>
-<script type="text/javascript">
-$(document).ready(function() {
-        $("#loginForm").validate({
-            rules: {
-                email: {
-                    required: true,
-                    email: true
-                },
-         
-                password: "required",
-            },
-             
-            messages: {
-                email: {
-                    required: "Please enter email",
-                    email: "Please enter a valid email address"
-                },
-                 
-                password: "Please enter password"
-            }
-        });
- 
-    });
-    </script>
-<title>Login Form</title>    
-<link rel="stylesheet" type="text/css" href="css/style.css">
-<style type=text/css>   
-body   
-{  
-height: 125vh;  
-margin-top: 80px;  
-padding: 30px;  
-background-size: cover;  
-font-family: sans-serif;  
-}  
-header {  
-background-color: #dd4b39;  
-position: fixed;  
-left: 0;  
-right: 0;  
-top: 5px;  
-height: 50px;  
-display: flex;  
-align-items: center;  
-}  
-header * {  
-display: inline;  
-}  
-header li {  
-margin: 20px;  
-}  
-header li2 {  
-margin: 450px;  
-}  
-header li a {  
-color: white;  
-text-decoration: none;  
-}  
-a2:hover {
-border: 2px solid white;
-border-radius: 5px;
+<title>Login/Sign up page</title>
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://apis.google.com/js/platform.js" async defer>
+			
+		</script>
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- Bootstrap CSS -->
+<style>
+.title {
+	color: gray;
+	font-size: 20 pt;
 }
 
-a2{
-border: 2px solid transparent;
-border-radius: 5px;
+.h1 {
+	font-size: 25;
 }
 
-tit1{
-color: grey;
-left: 25%; 
-position: relative;
-}
-tit2{
-color: grey;
-left: 50%; 
-position: relative;
-}
-.login{
-left: 30%;
-background-color: white;
-position:relative; 
-left:200px; 
-top:20px;
+.head {
+	font-size: 15;
+	color: Firebrick;
+	text-align: center;
 }
 
-
-
-.search-container {
-  --searchbox-height: 44px;
-  margin: 0 auto 0 auto;
-  min-width: 410px;
-  width: var(--content-width);
+.header {
+	font-size: 30pt;
+	padding: 10px;
+	text-align: center;
+	background-color: Firebrick;
+	color: white;
+	font-weight: bold;
+	text-decoration: none;
+	overflow: hidden;
+	width: 100%;
+	height: 10%;
 }
 
-.searchbar {
-  background: white;
-  cursor: text;
-  margin: 0 auto;
-  max-width: 584px;
-  min-width: 400px;
-  min-height: 50;
-  border-radius: 22px;
-  box-sizing: border-box;
-  font-size: 16px;
-  height: var(--searchbox-height);
-  position: relative;
+.logo {
+	float: left;
 }
 
-input [type = password]{
-left:0%; 
-width:300px; 
-border-radius:10px; 
-height:20px;
-border:grey;
+.right {
+	float: right;
 }
-.google {
-  background-color: #dd4b39;
-  color: white;
-  width: 450px;
+
+.header a {
+	font: Calibri;
+	text-align: center;
+	padding: 5px;
+	font-size: 10pt;
+	text-decoration: none;
+	font-weight: bold;
+	font-weight: bold;
+	color: white;
+}
+
+.header a.active {
+	border-style: solid;
+	border-color: white;
+	border-width: thin;
+}
+
+.column {
+	float: left;
+	height: 100%;
+	width: 50%;
+	height: 300px;
+	padding: 20 px;
+}
+
+.row:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+form {
+	font: Calibri;
+	width: 100%;
+	font-size: 20 pt;
+	color: gray;
+	line-height: 2;
+}
+
+form button {
+	width: 80%;
+	background-color: Firebrick;
+	cursor: pointer;
+	text-align: center;
+	padding: 10px;
+	color: white;
+	border-radius: 10px;
+}
+
+.block {
+	width: 80%;
+	background-color: white;
+	text-align: center;
+	height: 25px;
+	border: 1px solid lightgray;
+	border-radius: 10px;
 }
 </style>
-
 </head>
-<header>
-<nav>
-<ul>
-<div class="container" style="height:5px"></div>
-<li> <a2 href="#"> USC Chat </a2> </li>
-</ul>
-</nav>
-</header>
-<br/>
-<body>
-</div> 
-<tit1 style="font-size:30px">Login</tit1> 
-<tit2 style="font-size:30px">Sign-up</tit2>
-<div class="login" style="width: 450px; left:15%">    
-    <form style = "display:inline-block;" id="login" method="POST" action = "LoginServlet">    
-        <label style="color: grey; font-size: 20px; left:10%"><b>Username     
-        </b>    
-        </label> <div></div>   
-        <input style = "left:0%; width:400px; border-radius:5px; height:30px; border:2px solid grey;" class = "login" type="text" name="username" id="Uname1" placeholder="Username" REQUIRED>    
-        <br><br> <div style="height:10px"></div>   
-        <label style="color: grey; font-size: 20px"><b>Password     
-        </b>    
-        </label> <div style="height:10px"></div>
-        <input style = "left:0%; width:400px; border-radius:5px; height:30px; border:2px solid grey;" type=password name="password" id="Pass1" placeholder="Password" REQUIRED>    
-        <br><br> <div></div> 
-        <button  type = "submit"  style="background-color: #dd4b39; color: white; width: 410px; border-radius:5px; height:35px;" type="button" name="log1" id="log1" > Sign-in</button>          
-     	<div style="height:50px"></div>
-   		<div id="my-signin2"></div>
-     </form>
-  <script>
 
-    function onSuccess(googleUser) {
-      console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
-    }
-    function onFailure(error) {
-      console.log(error);
-    }
-    function renderButton() {
-      gapi.signin2.render('my-signin2', {
-        'scope': 'profile email',
-        'width': 410,
-        'height': 50,
-        'longtitle': true,
-        'theme': 'dark',
-        'onsuccess': onSuccess,
-        'onfailure': onFailure
-      });
-    }
-  </script>
-  
-  <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
-    <form style="display:inline-block;position:relative; left:500px; top:-250px;" action="registerServlet" method="POST">
-    <label style="color: grey; font-size: 20px; left:10%"><b>Email     
-        </b>    
-        </label> <div></div>   
-        <input style = "left:0%; width:400px; border-radius:5px; height:30px; border:2px solid grey;" class = "sign-up" type="email" name="email" id="email" placeholder="Email" REQUIRED>    
-        <br><br> <div style="height:10px"></div>   
-        <label style="color: grey; font-size: 20px; left:10%"><b>Username     
-        </b>    
-        </label> <div></div>   
-        <input style = "left:0%; width:400px; border-radius:5px; height:30px; border:2px solid grey;" class = "login" type="username" name="username" id="Uname" placeholder="Username" REQUIRED>    
-        <br><br> <div style="height:15px"></div>   
-        <label style="color: grey; font-size: 20px"><b>Password     
-        </b>    
-        </label> <div style="height:10px"></div>
-        <input style = "left:0%; width:400px; border-radius:5px; height:30px; border:2px solid grey;" type=password name="password" id="Pass" placeholder="Password" REQUIRED>    
-        <br><br> <div style = "height:10px"></div>
-        <label style="color: grey; font-size: 20px"><b> Confirm Password     
-        </b>
-            
-        </label> <div style="height:10px"></div>
-        <input style = "left:0%; width:400px; border-radius:5px; height:30px; border:2px solid grey;" type=password name="password" id="Pass2" placeholder="Password" oninput="check(this)" REQUIRED
-        >    
-        <br><br> <div></div>
-        <script type='text/javascript'>
-function check(input) {
-if (input.value != document.getElementById('Pass').value) {
-input
-.setCustomValidity('Password Must be Matching.');
-} else {
-// input is valid -- reset the error message
-input.setCustomValidity('');
-}
-}
-</script>
-        
-        <input type="checkbox" name="terms" value="agree" REQUIRED>
-         <label for="terms"> I have read and agree to the terms and conditions of Sal Stocks</label><br>
-        <input type="submit"style="background-color: #dd4b39; color: white; width: 410px; border-radius:5px; height:35px;" name="submit" id="submit" value = "Sign Up">          
-     <div style="height:10px"></div>
-     </form>   
-    <form style="display:inline-block;position:relative; left:250px; top:-200px;">  
-<input style="background-color: #dd4b39; color: white; width: 410px; border-radius:5px; height:35px;" type="button" name="log" id="log" value="Continue as a Guest">          
-     <div style="height:10px"></div>
-    </form> 
-</div> 
+<body>
+
+	<div class="header">
+		<a href="index.html" class="logo">CHAT USC</a>
+		<div class="right">
+			<a class="active" href="index.html"> Home</a> <a
+				href="loginsignin.html">Login/Sign Up</a>
+		</div>
+	</div>
+
+	<br>
+
+	<div class="row">
+		<div class="column">
+			<h1 class="title">Login</h1>
+			<form name="login" method="POST" action="LoginServlet">
+				Username<br> <input type="text" class="block" name="username"
+					required /><br> Password<br> <input type="text"
+					class="block" name="password" required /><br> <br>
+				<button type="submit">Sign in</button>
+			</form>
+
+		</div>
+
+		<div class="column">
+			<h1 class="title">Sign up</h1>
+			<form method="POST" action="registerServlet">
+				Email<br> <input type="email" class="block" name="email"
+					required /><br> Username<br> <input type="text"
+					class="block" name="username" required /><br> Password<br>
+				<input type="text" class="block" name="password" required /><br>
+				Confirm Password<br> <input type="text" class="block"
+					name="Sconfirmpassword" required /><br> <input
+					type="checkbox" id="agreed" name="agreed" value="agreed"> <label
+					for="agreed"> I have read and agree to all the terms and
+					conditions of Chat USC.</label> <br>
+				<button type="submit">Create Account</button>
+				<br>
+
+
+			</form>
+			<br>
+			<button type="guest">Continue as a guest</button>
+		</div>
+	</div>
+
+
 
 </body>
+
+
 </html>

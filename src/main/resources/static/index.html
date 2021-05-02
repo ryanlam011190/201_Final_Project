@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<style>
+		.h1{
+			font-size:25;
+		}
+		
+		.head{
+			font-size:15;
+			color: Firebrick;
+			text-align:center;
+		}
+
+		.header{
+				font-size: 30pt;
+				padding: 10px;
+				text-align: center;
+				float:left;
+				background-color: Firebrick;
+				color: white;
+				font-weight: bold;
+				text-decoration: none;
+				overflow:hidden;
+				width: 100%;
+		}
+
+		.header.right{
+				float: right;
+			}
+
+			.header a{
+				float:right;
+				font: Calibri;
+				text-align: center;
+				padding: 5px;
+				font-size: 10pt;
+				text-decoration: none;
+				font-weight: bold;
+				line-height:20px;
+				font-weight: bold;
+				color:white;
+			}
+
+			.header a.logo{
+				color:white;
+				font-size:30 pt;
+				float:left;
+			}
+
+			.header a.active{
+				border-style: solid;
+				border-color: white;
+				border-width: thin;
+			}
+
+		.card{
+			color:  dark gray;
+			background-color: #E3E3E3;
+			padding: 20 pt;
+			width: 100%;
+			height: 100%;
+		}
+
+		.butt{
+			background-color: FireBrick;
+			color: white;
+			font: calibri;
+			text-align: center;
+		}
+
+		.form-control{
+			width: 50%;
+			text-align:center;
+			display:inline-block;
+		}
+
+		.form-group{
+			text-align:center;
+		}
+
+		.form1{
+			text-align:center;
+			display:inline-block;
+		}
+
+		.interests{
+			text-align: center;
+		}
+
+	</style>
+    <title>CHAT USC</title>
+
+</head>
+<body style="background-color: #F6F6F8;">
+<div id="userJoin" class="container">
+    <br>
+    <br>
+    <div class="header">
+		<a href="index.html" class="logo">CHAT USC</a>
+		<div class="header.right">
+			<a class="active" href= "index.html"> Home</a>
+			<a href="login.html">Login/Sign Up</a>
+		</div> 
+	</div>
+    <br>
+    <br> 
+    <br>
+    <br>
+    <div class ="card">
+    <div class="interests">
+    	<div class = "head">
+    		<h2> USC Interests</h2>
+    	</div>
+    	<table style ="width:100%">
+	    	<tr>
+	    		<td>Puppies </td>
+	    		<td>Surfing </td>
+	    		<td>Gaming </td>
+	    		<td>Acting </td>
+	    		<td>Dance </td>
+	    		<td>Climbing </td>
+	    	</tr>
+	    	<tr>
+	    		<td>Programming </td>
+	    		<td>Concerts </td>
+	    		<td>Cooking </td>
+	    		<td>Card Games </td>
+	    		<td>Football </td>
+	    		<td>Skydiving</td>
+	    	</tr>
+	    	<tr>
+	    		<td>Sports </td>
+	    		<td>Traveling </td>
+	    		<td>Reading</td>
+	    		<td>Graphic Design</td>
+	    		<td>Exercise </td>
+	    		<td>Cars</td>
+	    	</tr>
+	    	<tr>
+	    		<td>Hiking </td>
+	    		<td>Movies </td>
+	    		<td>Spikeball</td>
+	    		<td>Fashion</td>
+	    		<td>Photography </td>
+	    		<td>Bowling </td>
+	    	</tr>
+	    	<tr>
+	    		<td>Artificial Intelligence</td>
+	    		<td>Caligraphy </td>
+	    		<td>Mindfulness</td>
+	    		<td>Gardening</td>
+	    		<td>Podcasts </td>
+	    		<td>Art</td>
+	    	</tr>
+	    	<tr>
+	    		<td>Ice cream</td>
+	    		<td>Cats </td>
+	    		<td>Yoga</td>
+	    		<td>Singing</td> 
+	    		<td>Makeup </td>
+	    		<td>Fishing </td>
+	    	</tr>
+	    </table>
+    </div>
+    <br>
+    <br>
+    <div class="form1">
+	    <form id="userJoinForm" name="userJoinForm">
+	            <label for="name">Enter Nickname:</label>
+	            <br>
+	            <input type="text" class="form-control" id="name" aria-describedby="name" placeholder="Nickname">
+	        	<br>
+	        	<br>
+	            <label for="room">Enter interest:</label>
+	            <br>
+	            <input type="text" class="form-control" id="room" aria-describedby="exampleInputRoom" placeholder="Interest">
+	       		<br>
+	       		<br>
+	        <button type="submit" class="btn butt">Join!</button>
+	    </form>
+    </div>
+    <br>
+    <br>
+</div>
+</div>
+
+<div id="chatPage" class="container d-none">
+   <div class="header">
+		<a href="index.html" class="logo">CHAT USC</a>
+		<div class="header.right">
+			<a href= "index.html"> Home</a>
+			<a href="login.html">Login/Sign Up</a>
+		</div> 
+	</div>
+
+    <div class="chat-header">
+        <h2> <span id="room-id-display"> Chat </span></h2>
+    </div>
+
+    <div class="waiting">
+        We are waiting to enter the room.
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+    <ul id="messageArea">
+
+    </ul>
+    </div>
+    </div>
+	 <form id="messagebox" name="messagebox">
+        <div class="form-group">
+            You are a guest user you cannot chat ....
+        </div>
+    </form>
+</div>
+
+
+
+<!-- Optional JavaScript -->
+
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.3.0/sockjs.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+<script src="/js/mychat.js"></script>
+</body>
+</html>
